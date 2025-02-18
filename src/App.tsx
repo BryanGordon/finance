@@ -1,8 +1,8 @@
+import { Home } from './componets/Home'
+
 function App () {
   return (
-    <main>
-      <h1>Finance project</h1>
-    </main>
+    <Home />
   )
 }
 
