@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
@@ -15,10 +14,36 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-body {
-  background-color: #14988D;
-}
+@layer base {
 
-main {
-  padding: 50px;
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input:active, input:focus-visible {
+    outline-color: #4c4f4fe4;
+    outline-style: outset;
+    outline-width: 2px;
+  }
+
+  body {
+    background-color: #14988D;
+  }
+
+  main {
+    padding: 50px;
+    min-height: 100vh;
+  }
+
+  header {
+    margin-bottom: 30px;
+  }
+
+  section {
+    width: 50%;
+    margin: 0 auto;
+  }
+
 }
