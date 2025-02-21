@@ -1,8 +1,9 @@
-import { Calendar } from 'lucide-react'
+import '../styles/DatePicker.css'
+import { Calendar } from '@/components/ui/calendar'
 
 export function DatePicker () {
   return (
-    <article>
+    <article className='calendar-card'>
       <Calendar />
     </article>
   )
