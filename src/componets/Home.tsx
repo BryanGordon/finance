@@ -4,7 +4,10 @@ import { DatePicker } from '@/views/DatePicker'
 export function Home () {
   return (
     <main>
-      <h1 className='text-4xl text-center'>Finance App</h1>
+      <header>
+        <h1 className='text-4xl text-center'>Finance App</h1>
+      </header>
+
       <section>
         <DataFinance />
       </section>
