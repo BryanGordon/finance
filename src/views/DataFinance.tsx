@@ -8,7 +8,12 @@ export function DataFinance () {
 
   const getDataGain = (value) => {
     setDataGain(value)
-    console.log(dataGain)
+  }
+
+  const getTotalGain = () => {
+    let res = totalGain
+    res += gain
+    setTotalGain(res)
   }
 
   return (
@@ -33,6 +38,15 @@ export function DataFinance () {
       <article className='data-container-info'>
         <span className='text-lg font-medium'>Total recibido en el mes: </span>
         <span className='text-amber-900 text-lg'>$ {totalGain}</span>
+      </article>
+
+      <article>
+        <button
+          onClick={() => getTotalGain()}
+          className='rounded-4xl bg-stone-300/25 text-white cursor-pointer px-4 my-5 text-center'
+        >
+          ver total
+        </button>
       </article>
 
     </>
