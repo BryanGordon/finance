@@ -6,8 +6,29 @@ export function DataFinance () {
   const [dataGain, setDataGain] = useState<string>('')
   const [totalGain, setTotalGain] = useState<number>(0)
 
+  const store = localStorage.getItem('test-fina-data')
+
   const getDataGain = (value) => {
     setDataGain(value)
+  }
+
+  const getData = () => {
+    if (store) {
+      return JSON.parse(store)
+    }
+
+    return []
+  }
+  const [data, setData] = useState(getData())
+
+  const handleClickRegister = () => {
+    const objData = [
+      gain,
+      dataGain
+    ]
+
+    setData([...data, objData])
+    localStorage.setItem('test-fina-data', JSON.stringify(data))
   }
 
   const getTotalGain = () => {
@@ -40,13 +61,22 @@ export function DataFinance () {
         <span className='text-amber-900 text-lg'>$ {totalGain}</span>
       </article>
 
-      <article>
+      <article className='my-0 mx-auto w-1/2 flex justify-center'>
         <button
-          onClick={() => getTotalGain()}
-          className='rounded-4xl bg-stone-300/25 text-white cursor-pointer px-4 my-5 text-center'
+          className='rounded-xl bg-stone-500/75 text-white cursor-pointer px-4 py-2 my-5 text-center w-1/2'
+          onClick={handleClickRegister}
         >
-          ver total
+          Registrar
         </button>
+      </article>
+
+      <article className='data-container-info'>
+        <button
+          className='rounded-xl bg-stone-500/75 text-white cursor-pointer px-4 py-2 my-5 text-center w-full'
+        >
+          Mostrar ganancias
+        </button>
+        <p className='bg-amber-700 rounded-2xl flex flex-col'>{getData()}</p>
       </article>
 
     </>
