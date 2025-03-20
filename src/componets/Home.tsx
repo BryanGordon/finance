@@ -1,3 +1,4 @@
+import { CrossIcon } from '@/icons/cross'
 import { DataFinance } from '@/views/DataFinance'
 import { DatePicker } from '@/views/DatePicker'
 // import { useState } from 'react'
@@ -27,6 +28,9 @@ export function Home () {
         </button>
       </article>
       */}
+      <div className='bg-white'>
+        <CrossIcon />
+      </div>
     </main>
   )
 }
