@@ -1,32 +1,35 @@
 import { useState } from 'react'
 import '../styles/DataFinance.css'
+import { useTests } from '@/hooks/useTests'
 
 export function DataFinance () {
+  const { dataGain, gain, setDataGain, setGain, dataInfo, setDataInfo, dataStoredInfo, setDataStored } = useTests()
+  /*
   const [gain, setGain] = useState(0)
   const [dataGain, setDataGain] = useState<string>('')
-  const [totalGain, setTotalGain] = useState<number>(0)
+  const [data, setData] = useState([])
   const [dataStored, setDataStored] = useState([])
+  */
+  const [totalGain, setTotalGain] = useState<number>(0)
 
   const getDataGain = (value) => {
     setDataGain(value)
   }
-
-  const [data, setData] = useState([])
-
+  /*
+  const getTotalGain = () => {
+    let res = totalGain
+    res += gain
+    setTotalGain(res)
+  }
+  */
   const handleClickRegister = () => {
     const objData = [
       gain,
       dataGain
     ]
 
-    setData([...data, objData])
-    localStorage.setItem('test-fina-data', JSON.stringify(data))
-  }
-
-  const getTotalGain = () => {
-    let res = totalGain
-    res += gain
-    setTotalGain(res)
+    setDataInfo([...dataInfo, objData])
+    localStorage.setItem('test-fina-data', JSON.stringify(dataInfo))
   }
 
   const mostrarInfo = () => {
@@ -75,9 +78,9 @@ export function DataFinance () {
         >
           Mostrar ganancias
         </button>
-        {console.log("value" + dataStored)}
+        {console.log("value" + dataStoredInfo)}
         {
-          dataStored.map((item, index) => (
+          dataStoredInfo.map((item, index) => (
             <div key={index}>
               <p className='bg-amber-700 rounded-2xl flex flex-col'>{item}</p>
             </div>
