@@ -3,6 +3,7 @@ import { CrossIcon } from '@/icons/cross'
 import { DataFinance } from '@/views/DataFinance'
 import { DatePicker } from '@/views/DatePicker'
 import { useEffect } from 'react'
+import { Modal } from './Modal'
 // import { useState } from 'react'
 
 export function Home () {
@@ -21,6 +22,7 @@ export function Home () {
       <section>
         <DataFinance />
       </section>
+      <Modal />
       {/*
       <section>
         <DatePicker />
