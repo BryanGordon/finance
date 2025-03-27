@@ -14,7 +14,7 @@ export function Home () {
   }, [])
 
   return (
-    <main>
+    <>
       <header>
         <h1 className='text-4xl text-center'>Finance App</h1>
       </header>
@@ -48,6 +48,6 @@ export function Home () {
 
           ))
         }
-    </main>
+    </>
   )
 }
