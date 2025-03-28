@@ -7,7 +7,7 @@ export function Modal () {
   // console.log('value ' + active)
   const showModal = 'fixed bg-stone-500/50 w-dvw h-dvh m-0 content-center'
   const hideModal = 'hidden'
-  const {active, changeActive } = useStore()
+  const active = useStore((state) => {})
   const modalStyles = active ? showModal : hideModal
 
   console.log(active)
